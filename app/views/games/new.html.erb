@@ -1,0 +1,12 @@
+<h1>This is such a great Game!</h1>
+
+<% @letters.each do |letter| %>
+<ul><%=letter %></ul>
+<% end %>
+
+<form action="/score" method="post">
+ <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+ <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="try" placeholder="What did you find?????">
+  <input type="submit" value="Are you sure?">
+</form>
